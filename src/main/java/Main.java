@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 class Main {
 
@@ -14,6 +16,6 @@ class Main {
      * @return true if number is prime else false
      */
     private static boolean isPrime(long number) {
-        // your code here
+        return !LongStream.rangeClosed(2, number/2).anyMatch(i -> number%i ==0);
     }
 }
